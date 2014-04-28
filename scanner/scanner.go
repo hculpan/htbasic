@@ -15,6 +15,7 @@ type Scanner struct {
 func OpenScanner(filename string) Scanner {
 	var result Scanner
 	result.source = new(Source)
+	result.currPosition = -1
 	err := result.source.Open(filename)
 	if err != nil {
 		fmt.Printf("ERROR: %s", err.Error)
